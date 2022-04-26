@@ -34,7 +34,7 @@ class TrxDonation extends Model
     /**
      * @var array
      */
-    protected $fillable = ['id_donation', 'id_transfer_method', 'status', 'nomimal', 'created_at', 'updated_at'];
+    protected $fillable = ['id_donation', 'id_transfer_method', 'status', 'nomimal', 'created_at', 'updated_at','trx_expired'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Donation;
+use App\Models\TrxDonation;
 use Facade\FlareClient\Http\Response;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
@@ -51,6 +52,7 @@ class DonationController extends Controller
             "nowhatsapp" => 'required|string|max:13',
             "description" => 'required|string|max:255',
             "is_anonim" => 'required|boolean',
+            "id_transfer_method" => 'required|numeric',
         ]);
 
         if ($validator->fails()) {
@@ -79,6 +81,16 @@ class DonationController extends Controller
             $donation->is_anonim= $request->is_anonim;
             $donation->photo= $path;
             $donation->save();
+
+            $nominal_unique = substr($request->nominal, 0, (strlen($request->nominal))-3) . rand(100,900);
+
+            $trx_donation = new TrxDonation();
+            $trx_donation->id_donation = $donation->id_donation;
+            $trx_donation->id_transfer_method = $request->id_transfer_method;
+            $trx_donation->status = 0;
+            $trx_donation->nominal = $nominal_unique;
+            $trx_donation->trx_expired = date("Y-m-d H:i:s", strtotime("+23 hours"));
+            $trx_donation->save();
 
             $response = [
                 'message' => 'Data donasi berhasil disimpan',

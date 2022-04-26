@@ -20,6 +20,7 @@ class CreateTrxDonation extends Migration
             $table->integer('status');
             $table->bigInteger('nominal');
             $table->timestamps();
+            $table->timestamp('trx_expired');
 
             $table->foreign('id_donation')->references('id_donation')->on('donation');
             $table->foreign('id_transfer_method')->references('id_transfer_method')->on('transfer_method');
