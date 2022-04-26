@@ -54,7 +54,7 @@ class ProjectController extends Controller
 
         try {
             $file = $request->file('photo');
-            $path = $file->store('public/files');
+            $path = $file->store('public/files/project');
             $name = $file->getClientOriginalName();
 
             $project = new Project();
@@ -132,7 +132,7 @@ class ProjectController extends Controller
             $project = Project::find($id_project);
 
             if ($file){
-                $path = $file->store('public/files');
+                $path = $file->store('public/files/project');
                 $name = $file->getClientOriginalName();
             } else {
                 $path = $project->photo;
