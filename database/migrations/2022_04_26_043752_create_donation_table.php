@@ -16,8 +16,8 @@ class CreateDonationTable extends Migration
         Schema::create('donation', function (Blueprint $table) {
             $table->increments('id_donation');
             $table->integer('id_project');
-            $table->integer('id_user');
-            $table->bigInteger('nomimal');
+            $table->integer('id_user')->nullable();
+            $table->bigInteger('nominal');
             $table->string('name', 32);
             $table->string('nowhatsapp', 13);
             $table->string('description', 255);

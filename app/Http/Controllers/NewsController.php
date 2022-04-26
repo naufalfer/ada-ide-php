@@ -7,7 +7,6 @@ use Facade\FlareClient\Http\Response;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Http\Resources\TransferMethodResource;
 use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
 
 class NewsController extends Controller

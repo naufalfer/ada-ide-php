@@ -4,6 +4,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\TransferMethodController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\DonationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,4 @@ Route::resource('project', ProjectController::class);
 Route::resource('type', TypeController::class);
 Route::resource('transfermethod', TransferMethodController::class);
 Route::resource('news', NewsController::class);
+Route::resource('donation', DonationController::class);

@@ -18,7 +18,7 @@ class CreateTrxDonation extends Migration
             $table->integer('id_donation');
             $table->integer('id_transfer_method');
             $table->integer('status');
-            $table->bigInteger('nomimal');
+            $table->bigInteger('nominal');
             $table->timestamps();
 
             $table->foreign('id_donation')->references('id_donation')->on('donation');

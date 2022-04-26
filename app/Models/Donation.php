@@ -38,7 +38,7 @@ class Donation extends Model
     /**
      * @var array
      */
-    protected $fillable = ['id_project', 'id_user', 'nomimal', 'name', 'nowhatsapp', 'description', 'photo', 'is_anonim', 'created_at', 'updated_at'];
+    protected $fillable = ['id_project', 'id_user', 'nominal', 'name', 'nowhatsapp', 'description', 'photo', 'is_anonim', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
