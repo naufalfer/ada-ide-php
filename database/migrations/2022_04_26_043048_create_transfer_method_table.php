@@ -18,6 +18,7 @@ class CreateTransferMethodTable extends Migration
             $table->string('bank_name', 32);
             $table->string('account_no', 32);
             $table->string('account_name', 255);
+            $table->timestamps();
         });
     }
 

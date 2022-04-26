@@ -16,6 +16,7 @@ class CreateType extends Migration
         Schema::create('type', function (Blueprint $table) {
             $table->increments('id_type');
             $table->string('project_name', 32);
+            $table->timestamps();
         });
     }
 

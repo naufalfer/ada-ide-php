@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDonationTable extends Migration
+class CreateNewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,15 @@ class CreateDonationTable extends Migration
      */
     public function up()
     {
-        Schema::create('donation', function (Blueprint $table) {
-            $table->increments('id_donation');
+        Schema::create('news', function (Blueprint $table) {
+            $table->increments('id_news');
             $table->integer('id_project');
-            $table->integer('id_user');
-            $table->bigInteger('nomimal');
-            $table->string('name', 32);
-            $table->string('nowhatsapp', 13);
-            $table->string('description', 255);
+            $table->date('news_date');
+            $table->string('title');
+            $table->string('description');
             $table->string('photo');
-            $table->boolean('is_anonim');
             $table->timestamps();
-
+            
             $table->foreign('id_project')->references('id_project')->on('project');
         });
     }
@@ -36,6 +33,6 @@ class CreateDonationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donation');
+        Schema::dropIfExists('news');
     }
 }
