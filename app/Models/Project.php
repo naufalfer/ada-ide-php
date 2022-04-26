@@ -36,7 +36,7 @@ class Project extends Model
     /**
      * @var array
      */
-    protected $fillable = ['id_type', 'project_name', 'start_date', 'end_date', 'target_fund', 'current_fund', 'created_at', 'updated_at'];
+    protected $fillable = ['id_type', 'project_name', 'start_date', 'end_date', 'target_fund', 'current_fund', 'created_at', 'updated_at','photo','description'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

@@ -22,7 +22,8 @@ class CreateProjectTable extends Migration
             $table->bigInteger('target_fund');
             $table->bigInteger('current_fund');
             $table->timestamps();
-
+            $table->string('photo');
+            $table->string('description');
             
             $table->foreign('id_type')->references('id_type')->on('type');
         });
